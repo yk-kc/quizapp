@@ -24,5 +24,10 @@ export function useStyles({ bgcolor, color }: Props) {
     text: {
       color: color ? color : Colors.BLACK,
     },
+    logo: {
+      width: 32,
+      height: 32,
+      marginBottom: 12,
+    },
   })
 }
