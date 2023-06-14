@@ -9,9 +9,17 @@ export function useHooks() {
     navigation.navigate('quiz/js')
   }
 
-  // const onPressRB = () => {}
+  const onPressRB = () => {
+    navigation.navigate('quiz/rb')
+  }
+
+  const onPressPY = () => {
+    navigation.navigate('quiz/py')
+  }
 
   return {
     onPressJS,
+    onPressRB,
+    onPressPY,
   }
 }

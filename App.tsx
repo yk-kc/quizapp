@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet } from 'react-native'
+import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from './src/screens/Home'
@@ -12,14 +11,10 @@ const Stack = createNativeStackNavigator<HomeStackParamList>()
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='home'>
+      <Stack.Navigator initialRouteName="home">
+        <Stack.Screen name="home" options={{ headerShown: false }} component={HomeScreen} />
         <Stack.Screen
-          name='home'
-          options={{ headerShown: false }}
-          component={HomeScreen}
-        />
-        <Stack.Screen
-          name='quiz/select'
+          name="quiz/select"
           options={{
             headerTitle: 'クイズ選択',
             headerBackVisible: true,
@@ -28,9 +23,27 @@ export default function App() {
           component={QuizSelectScreen}
         />
         <Stack.Screen
-          name='quiz/js'
+          name="quiz/js"
           options={{
             headerTitle: 'JavaScript',
+            headerBackVisible: true,
+            headerBackTitleVisible: false,
+          }}
+          component={QuizJSScreen}
+        />
+        <Stack.Screen
+          name="quiz/rb"
+          options={{
+            headerTitle: 'Ruby',
+            headerBackVisible: true,
+            headerBackTitleVisible: false,
+          }}
+          component={QuizJSScreen}
+        />
+        <Stack.Screen
+          name="quiz/py"
+          options={{
+            headerTitle: 'Python',
             headerBackVisible: true,
             headerBackTitleVisible: false,
           }}
