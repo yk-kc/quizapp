@@ -1,17 +1,9 @@
 import React, { useState } from 'react'
-import {
-  Text,
-  View,
-  Modal,
-  TouchableOpacity,
-  FlatList,
-  Alert,
-  Pressable,
-} from 'react-native'
+import { Text, View, Modal, TouchableOpacity, FlatList, Alert, Pressable } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useStyles } from './style'
-import AnswerButton from '../../components/AnswerButton'
-import type { QuizData } from '../../types/quiz'
+import AnswerButton from '@quizapp/components/AnswerButton'
+import type { QuizData } from '@quizapp/types/quiz'
 
 type Props = {
   title: string
@@ -52,27 +44,18 @@ export default React.memo(function QuizForm({ title, data }: Props) {
     <>
       <SafeAreaView style={style.container}>
         <Modal
-          animationType='fade'
+          animationType="fade"
           transparent={true}
           visible={modalVisible}
           onRequestClose={() => {
             setModalVisible(!modalVisible)
           }}
-          style={{ zIndex: 1 }}
-        >
-          {modalVisible && (
-            <TouchableOpacity
-              style={style.overlay}
-              onPress={() => setModalVisible(false)}
-            />
-          )}
+          style={{ zIndex: 1 }}>
+          {modalVisible && <TouchableOpacity style={style.overlay} onPress={() => setModalVisible(false)} />}
           <View style={style.centeredView}>
             <View style={style.modalView}>
               <Text style={style.modalText}>Hello World!</Text>
-              <Pressable
-                style={[style.button, style.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}
-              >
+              <Pressable style={[style.button, style.buttonClose]} onPress={() => setModalVisible(!modalVisible)}>
                 <Text style={style.textStyle}>Hide Modal</Text>
               </Pressable>
             </View>
@@ -88,9 +71,7 @@ export default React.memo(function QuizForm({ title, data }: Props) {
         <View style={style.buttons}>
           <FlatList
             data={data[currentQuizIndex].choice as []}
-            renderItem={({ item, index }) => (
-              <AnswerButton text={item} onPress={() => onPressAnswer(index)} />
-            )}
+            renderItem={({ item, index }) => <AnswerButton text={item} onPress={() => onPressAnswer(index)} />}
             numColumns={2}
             keyExtractor={(item, index) => index.toString()}
             contentContainerStyle={style.flatListContainer}

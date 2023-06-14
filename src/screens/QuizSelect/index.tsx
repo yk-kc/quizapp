@@ -1,19 +1,16 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, Alert } from 'react-native'
+import { Text, View, FlatList } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import style from './style'
-import { useHooks } from './hooks'
+import { useStyles } from './style'
 
 export default React.memo(function QuizSelectScreen() {
-  const { onPressJS } = useHooks()
+  const style = useStyles()
 
   return (
     <SafeAreaView style={style.container}>
       <Text>クイズの言語を選択しよう</Text>
       <View>
-        <TouchableOpacity style={style.QuizSelectButton} onPress={onPressJS}>
-          <Text>JavaScript</Text>
-        </TouchableOpacity>
+        <FlatList data={[]} renderItem={() => <></>} />
       </View>
     </SafeAreaView>
   )
