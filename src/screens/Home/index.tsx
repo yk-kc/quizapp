@@ -7,8 +7,7 @@ import type { HomeStackParamList } from '../../types/routes'
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 export default React.memo(function HomeScreen() {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<HomeStackParamList, 'home'>>()
+  const navigation = useNavigation<NativeStackNavigationProp<HomeStackParamList, 'home'>>()
 
   const onPressStart = () => {
     console.log('press')
@@ -19,7 +18,7 @@ export default React.memo(function HomeScreen() {
     <SafeAreaView style={style.container}>
       <Text>プログラミングクイズ</Text>
       <TouchableOpacity style={style.startButton} onPress={onPressStart}>
-        <Text>スタート</Text>
+        <Text style={style.start}>スタート</Text>
       </TouchableOpacity>
     </SafeAreaView>
   )

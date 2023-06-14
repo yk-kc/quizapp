@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { Colors } from '../../constants'
+import { SCREEN_WIDTH } from '@quizapp/constants/Sizes'
 
 export default StyleSheet.create({
   container: {
@@ -8,11 +9,19 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   startButton: {
-    borderWidth: 1,
     borderRadius: 16,
-    borderColor: Colors.PRIMARY,
+    backgroundColor: Colors.PRIMARY,
     paddingHorizontal: 16,
     paddingVertical: 8,
     marginTop: 48,
+    height: 70,
+    width: SCREEN_WIDTH - 16 * 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  start: {
+    color: Colors.WHITE,
+    fontSize: 16,
+    fontWeight: '500',
   },
 })
