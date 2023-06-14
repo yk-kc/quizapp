@@ -10,7 +10,7 @@ export default React.memo(function HomeScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<HomeStackParamList, 'home'>>()
 
   const onPressStart = () => {
-    console.log('press')
+    console.log('started')
     navigation.navigate('quiz/select')
   }
 

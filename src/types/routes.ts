@@ -4,4 +4,7 @@ export type HomeStackParamList = {
   'quiz/js': undefined
   'quiz/rb': undefined
   'quiz/py': undefined
+  'quiz/html': undefined
+  'quiz/css': undefined
+  'quiz/sql': undefined
 }

@@ -17,9 +17,24 @@ export function useHooks() {
     navigation.navigate('quiz/py')
   }
 
+  const onPressHTML = () => {
+    navigation.navigate('quiz/html')
+  }
+
+  const onPressCSS = () => {
+    navigation.navigate('quiz/css')
+  }
+
+  const onPressSQL = () => {
+    navigation.navigate('quiz/sql')
+  }
+
   return {
     onPressJS,
     onPressRB,
     onPressPY,
+    onPressHTML,
+    onPressCSS,
+    onPressSQL,
   }
 }

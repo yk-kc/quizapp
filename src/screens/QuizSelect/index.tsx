@@ -30,6 +30,9 @@ export default React.memo(function QuizSelectScreen() {
       color: Colors.WHITE,
     },
     { title: 'Python', onPress: hooks.onPressPY, bgcolor: Colors.PYTHON },
+    { title: 'HTML', onPress: hooks.onPressHTML, bgcolor: Colors.HTML },
+    { title: 'CSS', onPress: hooks.onPressCSS, bgcolor: Colors.CSS },
+    { title: 'SQL', onPress: hooks.onPressSQL, bgcolor: Colors.SQL, color: Colors.WHITE },
   ]
 
   return (

@@ -49,6 +49,33 @@ export default function App() {
           }}
           component={QuizJSScreen}
         />
+        <Stack.Screen
+          name="quiz/html"
+          options={{
+            headerTitle: 'HTML',
+            headerBackVisible: true,
+            headerBackTitleVisible: false,
+          }}
+          component={QuizJSScreen}
+        />
+        <Stack.Screen
+          name="quiz/css"
+          options={{
+            headerTitle: 'CSS',
+            headerBackVisible: true,
+            headerBackTitleVisible: false,
+          }}
+          component={QuizJSScreen}
+        />
+        <Stack.Screen
+          name="quiz/sql"
+          options={{
+            headerTitle: 'SQL',
+            headerBackVisible: true,
+            headerBackTitleVisible: false,
+          }}
+          component={QuizJSScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )
