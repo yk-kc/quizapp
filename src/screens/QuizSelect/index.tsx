@@ -37,6 +37,8 @@ export default React.memo(function QuizSelectScreen() {
       <Text>クイズの言語を選択しよう</Text>
       <View>
         <FlatList
+          numColumns={2}
+          keyExtractor={(item, _) => _.toString()}
           data={LANGS}
           renderItem={({ item }) => (
             <SelectLangButton title={item.title} onPress={item.onPress} bgcolor={item.bgcolor} color={item.color} />

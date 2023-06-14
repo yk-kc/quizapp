@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { Colors } from '@quizapp/constants'
+import { SCREEN_WIDTH } from '@quizapp/constants/Sizes'
 
 type Props = {
   bgcolor: string
@@ -13,7 +14,12 @@ export function useStyles({ bgcolor, color }: Props) {
       backgroundColor: bgcolor ? bgcolor : Colors.JAVASCRIPT,
       paddingHorizontal: 16,
       paddingVertical: 8,
-      marginTop: 48,
+      marginTop: 24,
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 200,
+      width: SCREEN_WIDTH / 2 - 16 * 2,
+      marginHorizontal: 8,
     },
     text: {
       color: color ? color : Colors.BLACK,

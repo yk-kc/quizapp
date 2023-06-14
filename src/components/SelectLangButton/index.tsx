@@ -12,7 +12,7 @@ type Props = {
 export default function SelectLangButton({ title, onPress, bgcolor, color }: Props) {
   const style = useStyles({ bgcolor, color })
   return (
-    <TouchableOpacity style={style.QuizSelectButton} onPress={onPress}>
+    <TouchableOpacity activeOpacity={0.7} style={style.QuizSelectButton} onPress={onPress}>
       <Text style={style.text}>{title}</Text>
     </TouchableOpacity>
   )
