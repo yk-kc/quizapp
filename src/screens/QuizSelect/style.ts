@@ -10,5 +10,10 @@ export function useStyles() {
     flatListContainer: {
       paddingBottom: 32,
     },
+    title: {
+      paddingBottom: 16,
+      fontWeight: 'bold',
+      fontSize: 15,
+    },
   })
 }

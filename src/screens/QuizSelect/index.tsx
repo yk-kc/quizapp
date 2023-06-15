@@ -11,7 +11,7 @@ export default React.memo(function QuizSelectScreen() {
 
   return (
     <SafeAreaView style={style.container}>
-      <Text>クイズの言語を選択しよう</Text>
+      <Text style={style.title}>\ クイズの言語を選択しよう！ /</Text>
       <View>
         <FlatList
           numColumns={2}
