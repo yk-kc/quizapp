@@ -13,7 +13,7 @@ export function useStyles() {
       paddingBottom: 32,
     },
     title: {
-      paddingBottom: 16,
+      paddingVertical: 16,
       fontWeight: 'bold',
       fontSize: 15,
     },
