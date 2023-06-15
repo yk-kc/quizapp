@@ -1,4 +1,7 @@
 export const Colors = {
+  //TODO: ユーザーの設定で変更可能にする
+  BG_THEME: '#fff',
+
   PRIMARY: '#7C98B3',
   BLACK: '#000000',
   WHITE: '#FFFFFF',

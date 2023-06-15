@@ -11,7 +11,8 @@ export function useStyles({ modalVisible }: Props) {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      marginHorizontal: 16,
+      paddingHorizontal: 16,
+      backgroundColor: Colors.BG_THEME,
     },
     codeBG: {
       backgroundColor: Colors.BLACK,

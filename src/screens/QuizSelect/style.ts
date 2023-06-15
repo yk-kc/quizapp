@@ -1,3 +1,4 @@
+import { Colors } from '@quizapp/constants'
 import { StyleSheet } from 'react-native'
 
 export function useStyles() {
@@ -6,6 +7,7 @@ export function useStyles() {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
+      backgroundColor: Colors.BG_THEME,
     },
     flatListContainer: {
       paddingBottom: 32,
