@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from './src/screens/Home'
 import QuizSelectScreen from './src/screens/QuizSelect'
 import QuizJSScreen from './src/screens/QuizJS'
+import QuizRBScreen from './src/screens/QuizRB'
 import type { HomeStackParamList } from './src/types/routes'
 
 const Stack = createNativeStackNavigator<HomeStackParamList>()
@@ -38,7 +39,7 @@ export default function App() {
             headerBackVisible: true,
             headerBackTitleVisible: false,
           }}
-          component={QuizJSScreen}
+          component={QuizRBScreen}
         />
         <Stack.Screen
           name="quiz/py"

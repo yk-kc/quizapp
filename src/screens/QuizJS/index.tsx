@@ -1,8 +1,8 @@
 import React from 'react'
-import type { QuizData } from '../../types/quiz'
-import QuizForm from '../../components/QuizForm'
+import type { QuizData } from '@quizapp/types/quiz'
+import QuizForm from '@quizapp/components/QuizForm'
 
-function QuizJS() {
+export default React.memo(function QuizJS() {
   const QUIZ_DATA: QuizData[] = [
     {
       id: 0,
@@ -20,7 +20,5 @@ function QuizJS() {
     },
   ]
 
-  return <QuizForm title='JavaScript' data={QUIZ_DATA} />
-}
-
-export default QuizJS
+  return <QuizForm title="JavaScript" data={QUIZ_DATA} />
+})
