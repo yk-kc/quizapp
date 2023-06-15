@@ -7,5 +7,8 @@ export function useStyles() {
       alignItems: 'center',
       justifyContent: 'center',
     },
+    flatListContainer: {
+      paddingBottom: 32,
+    },
   })
 }

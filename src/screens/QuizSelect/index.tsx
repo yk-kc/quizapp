@@ -17,6 +17,7 @@ export default React.memo(function QuizSelectScreen() {
           numColumns={2}
           keyExtractor={(item, _) => _.toString()}
           data={hooks.LANGS}
+          contentContainerStyle={style.flatListContainer}
           renderItem={({ item }) => (
             <SelectLangButton
               title={item.title}
