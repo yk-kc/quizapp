@@ -89,8 +89,15 @@ export function useStyles({ modalVisible }: Props) {
       backgroundColor: modalVisible ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
     },
     solveImage: {
+      // TODO: 画像サイズ
       width: 245,
       height: 150,
+    },
+    endTextContainer: {
+      alignItems: 'center',
+    },
+    endText1: {
+      marginBottom: 8,
     },
   })
 }

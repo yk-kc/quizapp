@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { useStyles } from './style'
 import AnswerButton from '@quizapp/components/AnswerButton'
 import type { QuizData } from '@quizapp/types/quiz'
+import { useHomeNavigation } from '@quizapp/hooks/useHomeNavigation'
 
 type Props = {
   title: string
@@ -14,7 +15,10 @@ export default React.memo(function QuizForm({ title, data }: Props) {
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0)
   const currentQuiz = data[currentQuizIndex]
   const [modalVisible, setModalVisible] = useState(false)
+  const [endModalVisible, setEndModalVisible] = useState(false)
   const style = useStyles({ modalVisible })
+  const { navigation } = useHomeNavigation()
+
   const onPressAnswer = (choiceIndex: number) => {
     if (choiceIndex === currentQuiz.answer) {
       console.log('正解！')
@@ -22,6 +26,7 @@ export default React.memo(function QuizForm({ title, data }: Props) {
         setCurrentQuizIndex(currentQuizIndex + 1)
       } else {
         console.log('全問終了！')
+        setEndModalVisible(true)
       }
     } else {
       Alert.alert('残念！', 'もう一度チャレンジしてみよう！', [
@@ -42,7 +47,16 @@ export default React.memo(function QuizForm({ title, data }: Props) {
 
   const onPressNext = () => {
     setModalVisible(false)
-    setCurrentQuizIndex(currentQuizIndex + 1)
+    if (currentQuizIndex < data.length - 1) {
+      setCurrentQuizIndex(currentQuizIndex + 1)
+    } else {
+      setEndModalVisible(true)
+    }
+  }
+
+  const onPressEnd = () => {
+    setEndModalVisible(false)
+    navigation.navigate('quiz/select')
   }
 
   return (
@@ -63,6 +77,28 @@ export default React.memo(function QuizForm({ title, data }: Props) {
               <Image source={currentQuiz.solve} style={style.solveImage} />
               <Pressable style={[style.button, style.buttonClose]} onPress={onPressNext}>
                 <Text style={style.textStyle}>次の問題へ</Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
+        <Modal
+          animationType="fade"
+          transparent={true}
+          visible={endModalVisible}
+          onRequestClose={() => {
+            setEndModalVisible(!endModalVisible)
+          }}
+          style={{ zIndex: 1 }}>
+          {endModalVisible && <TouchableOpacity style={style.overlay} onPress={() => setEndModalVisible(false)} />}
+          <View style={style.centeredView}>
+            <View style={style.modalView}>
+              <Text style={style.modalText}>\ 全問終了！ /</Text>
+              <View style={style.endTextContainer}>
+                <Text style={style.endText1}>お疲れさまでした！</Text>
+                <Text>他の問題にもチャレンジしてみよう！</Text>
+              </View>
+              <Pressable style={[style.button, style.buttonClose]} onPress={onPressEnd}>
+                <Text style={style.textStyle}>クイズ選択へ</Text>
               </Pressable>
             </View>
           </View>
