@@ -44,9 +44,11 @@ export function useStyles({ modalVisible }: Props) {
     },
     modalView: {
       margin: 20,
-      backgroundColor: 'white',
+      backgroundColor: Colors.WHITE,
       borderRadius: 20,
-      padding: 35,
+      padding: 12,
+      width: 300,
+      height: 300,
       alignItems: 'center',
       shadowColor: '#000',
       shadowOffset: {
@@ -56,22 +58,27 @@ export function useStyles({ modalVisible }: Props) {
       shadowOpacity: 0.25,
       shadowRadius: 4,
       elevation: 5,
+      justifyContent: 'space-between',
     },
     button: {
       borderRadius: 20,
-      padding: 10,
+      paddingVertical: 8,
+      paddingHorizontal: 16,
       elevation: 2,
     },
     buttonClose: {
-      backgroundColor: '#2196F3',
+      borderWidth: 1,
+      borderColor: Colors.PRIMARY,
+      backgroundColor: Colors.WHITE,
     },
     textStyle: {
-      color: 'white',
+      color: Colors.PRIMARY,
       fontWeight: 'bold',
       textAlign: 'center',
     },
     modalText: {
       marginBottom: 15,
+      fontWeight: 'bold',
       textAlign: 'center',
     },
     overlay: {
@@ -80,6 +87,10 @@ export function useStyles({ modalVisible }: Props) {
       width: modalVisible ? '100%' : 'auto',
       height: modalVisible ? '100%' : 'auto',
       backgroundColor: modalVisible ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+    },
+    solveImage: {
+      width: 245,
+      height: 150,
     },
   })
 }

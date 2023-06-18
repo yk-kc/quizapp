@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View, Modal, TouchableOpacity, FlatList, Alert, Pressable } from 'react-native'
+import { Text, View, Modal, TouchableOpacity, FlatList, Alert, Pressable, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useStyles } from './style'
 import AnswerButton from '@quizapp/components/AnswerButton'
@@ -16,7 +16,7 @@ export default React.memo(function QuizForm({ title, data }: Props) {
   const [modalVisible, setModalVisible] = useState(false)
   const style = useStyles({ modalVisible })
   const onPressAnswer = (choiceIndex: number) => {
-    if (choiceIndex === data[currentQuizIndex].answer) {
+    if (choiceIndex === currentQuiz.answer) {
       console.log('正解！')
       if (currentQuizIndex < data.length - 1) {
         setCurrentQuizIndex(currentQuizIndex + 1)
@@ -40,6 +40,11 @@ export default React.memo(function QuizForm({ title, data }: Props) {
     }
   }
 
+  const onPressNext = () => {
+    setModalVisible(false)
+    setCurrentQuizIndex(currentQuizIndex + 1)
+  }
+
   return (
     <>
       <SafeAreaView style={style.container}>
@@ -54,9 +59,10 @@ export default React.memo(function QuizForm({ title, data }: Props) {
           {modalVisible && <TouchableOpacity style={style.overlay} onPress={() => setModalVisible(false)} />}
           <View style={style.centeredView}>
             <View style={style.modalView}>
-              <Text style={style.modalText}>Hello World!</Text>
-              <Pressable style={[style.button, style.buttonClose]} onPress={() => setModalVisible(!modalVisible)}>
-                <Text style={style.textStyle}>Hide Modal</Text>
+              <Text style={style.modalText}>答え</Text>
+              <Image source={currentQuiz.solve} style={style.solveImage} />
+              <Pressable style={[style.button, style.buttonClose]} onPress={onPressNext}>
+                <Text style={style.textStyle}>次の問題へ</Text>
               </Pressable>
             </View>
           </View>

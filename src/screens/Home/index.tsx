@@ -2,12 +2,10 @@ import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import style from './style'
-import { useNavigation } from '@react-navigation/native'
-import type { HomeStackParamList } from '../../types/routes'
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { useHomeNavigation } from '@quizapp/hooks/useHomeNavigation'
 
 export default React.memo(function HomeScreen() {
-  const navigation = useNavigation<NativeStackNavigationProp<HomeStackParamList, 'home'>>()
+  const { navigation } = useHomeNavigation()
 
   const onPressStart = () => {
     console.log('started')
